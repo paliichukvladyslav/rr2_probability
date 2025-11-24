@@ -1,5 +1,6 @@
 from distrib.polygon import plotPolygonShow, plotPolygonSave
 from distrib.cdf import computeCdf, plotCdfShow, plotCdfSave
+from distrib.stats import computeCharacteristics
 
 def menu(X, P):
     while True:
@@ -9,6 +10,7 @@ def menu(X, P):
         print("[3] Зберегти багатокутник у файл")
         print("[4] Побудувати графік F(x)")
         print("[5] Зберегти графік F(x) у файл")
+        print("[6] Обчислити M, D, σ, Mo")
         print("[0] Вийти")
 
         choice = input("Ваш вибір: ")
@@ -26,6 +28,12 @@ def menu(X, P):
         elif choice == "5":
             F = computeCdf(P)
             plotCdfSave(X, F)
+        elif choice == "6":
+            M, D, sigma, modes = computeCharacteristics(X, P)
+            print(f"M = {M}")
+            print(f"D = {D}")
+            print(f"σ = {sigma}")
+            print(f"Мода(и): {modes}")
         elif choice == "0":
             print("Завершення роботи...")
             break
