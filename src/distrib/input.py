@@ -1,9 +1,28 @@
+from distrib.findP import findInferredP
+
 def inputDistribution():
     print("Введіть значення X через пробіл:")
     X = list(map(float, input().split()))
 
+
+
     print("Введіть відповідні ймовірності P через пробіл:")
-    P = list(map(float, input().split()))
+    rawP = input().split()
+
+    P = []
+    inferredIndex = None
+
+    for i, token in enumerate(rawP):
+        if token.lower() == "p":
+            inferredIndex = i
+            P.append(None)
+        else:
+            P.append(float(token))
+
+    if inferredIndex is not None:
+        inferred = findInferredP(P)
+        P[inferredIndex] = inferred
+        print(f"Невідоме p = {inferred}")
 
     if len(X) != len(P):
       raise ValueError("К-сть значень X і P повинна збігатися.")
