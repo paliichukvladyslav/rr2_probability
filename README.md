@@ -27,23 +27,27 @@
     ├── __init__.py
     ├── main.py
     └── utils
-        └── menu.py```
+        └── menu.py
+        ```
 
 ## Запуск
 
 ### 1. Клонувати Git репозиторій
 ```bash
 git clone git@github.com:paliichukvladyslav/rr2_probability.git
-cd rr2_probability```
+cd rr2_probability
+```
 ### 2. Створити та активувати virtual environment
 На GNU/Linux:
 ```bash
 python -m venv venv
-source venv/bin/activate```
+source venv/bin/activate
+```
 На MS Windows (Powershell):
 ```bash
 python -m venv venv
-. .\venv\Scripts\Activate.ps1```
+. .\venv\Scripts\Activate.ps1
+```
 ### 3. Встановити залежності
 ```pip install -r requirements.txt```
 ### 4. Запустити програму
