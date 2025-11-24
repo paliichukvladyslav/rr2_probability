@@ -1,9 +1,9 @@
-from distrib.input import inputDistribution 
+from distrib.input import inputDistribution
+from utils.menu import menu
 
 def main():
     X, P = inputDistribution()
-    print("X =", X)
-    print("P =", P)
+    menu(X, P)
 
 if __name__ == "__main__":
     main()
