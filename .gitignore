@@ -217,3 +217,5 @@ __marimo__/
 
 # png
 *.png
+# but include images
+!images/*.png
